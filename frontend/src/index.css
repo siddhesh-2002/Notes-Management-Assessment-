@@ -1,0 +1,146 @@
+/* ── NoteVault Global Styles ─────────────────────────────────────────────── */
+
+/* Google Fonts: Syne (headings) + DM Sans (body) */
+:root {
+  /* Brand palette */
+  --accent: #7c6aff;
+  --accent-hover: #6a57f0;
+  --accent-soft: #ede9ff;
+  --accent-muted: rgba(124, 106, 255, 0.12);
+
+  /* Semantic */
+  --green: #10b981;
+  --green-soft: #d1fae5;
+  --red: #ef4444;
+  --red-soft: #fee2e2;
+  --amber: #f59e0b;
+  --amber-soft: #fef3c7;
+  --blue: #3b82f6;
+  --blue-soft: #dbeafe;
+
+  /* Typography */
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition: 0.2s ease;
+  --transition-slow: 0.35s ease;
+}
+
+/* ── Light theme ─────────────────────────────────────────────────────────── */
+[data-theme='light'] {
+  --bg-page: #f4f2ff;
+  --bg-base: #ffffff;
+  --bg-subtle: #f9f8ff;
+  --bg-muted: #f0eeff;
+  --bg-hover: #ede9ff;
+
+  --border: rgba(124, 106, 255, 0.15);
+  --border-strong: rgba(124, 106, 255, 0.3);
+
+  --text-primary: #16131f;
+  --text-secondary: #4b4663;
+  --text-muted: #9691b0;
+  --text-on-accent: #ffffff;
+
+  --shadow-card: 0 2px 12px rgba(124, 106, 255, 0.08);
+  --shadow-card-hover: 0 8px 32px rgba(124, 106, 255, 0.16);
+  --shadow-modal: 0 24px 64px rgba(22, 19, 31, 0.18);
+}
+
+/* ── Dark theme ──────────────────────────────────────────────────────────── */
+[data-theme='dark'] {
+  --bg-page: #0e0c18;
+  --bg-base: #18152a;
+  --bg-subtle: #201d32;
+  --bg-muted: #252240;
+  --bg-hover: #2d2950;
+
+  --border: rgba(124, 106, 255, 0.18);
+  --border-strong: rgba(124, 106, 255, 0.35);
+
+  --text-primary: #f0eeff;
+  --text-secondary: #b8b2d8;
+  --text-muted: #6b6589;
+  --text-on-accent: #ffffff;
+
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 8px 32px rgba(124, 106, 255, 0.2);
+  --shadow-modal: 0 24px 64px rgba(0, 0, 0, 0.6);
+
+  --accent-soft: rgba(124, 106, 255, 0.18);
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background var(--transition-slow), color var(--transition-slow);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ── Utility classes ─────────────────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
